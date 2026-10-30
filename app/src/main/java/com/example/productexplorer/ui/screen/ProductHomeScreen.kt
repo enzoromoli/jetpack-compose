@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.productexplorer.model.ProductUi
+import com.example.productexplorer.ui.component.CategoriesSection
 import com.example.productexplorer.ui.component.FeaturedProductSection
 import com.example.productexplorer.ui.component.HomeHeader
 import com.example.productexplorer.ui.component.SearchPreviewBar
@@ -32,6 +33,8 @@ fun ProductHomeScreen(
             product = featuredProduct,
             onClick = onFeaturedProductClick
         )
+        Spacer(modifier = Modifier.height(24.dp))
+        CategoriesSection()
         Spacer(modifier = Modifier.height(24.dp))
     }
 }
