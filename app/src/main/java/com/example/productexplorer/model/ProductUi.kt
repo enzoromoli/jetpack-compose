@@ -1,4 +1,4 @@
-package com.example.tp4.model
+package com.example.productexplorer.model
 
 data class ProductUi(
     val title: String,

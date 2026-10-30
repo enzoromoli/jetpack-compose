@@ -1,4 +1,4 @@
-package com.example.tp4.ui.component
+package com.example.productexplorer.ui.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -10,9 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ProductPriceCard(
-    price: Double,
-    discountPercentage: Double,
+fun ProductAvailabilityCard(
+    stock: Int,
+    shippingInformation: String,
     modifier: Modifier = Modifier
 ) {
     Card(modifier = modifier) {
@@ -20,11 +20,15 @@ fun ProductPriceCard(
             modifier = Modifier.padding(16.dp)
         ) {
             Text(
-                text = "$price €",
-                style = MaterialTheme.typography.headlineSmall
+                text = "Disponibilité",
+                style = MaterialTheme.typography.titleMedium
             )
             Text(
-                text = "Remise : $discountPercentage %",
+                text = "Stock : $stock unités",
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Text(
+                text = shippingInformation,
                 style = MaterialTheme.typography.bodyMedium
             )
         }

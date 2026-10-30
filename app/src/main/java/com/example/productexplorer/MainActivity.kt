@@ -1,4 +1,4 @@
-package com.example.tp4
+package com.example.productexplorer
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.greetingcard.ui.theme.GreetingCardTheme
-import com.example.tp4.data.sampleProduct
-import com.example.tp4.ui.screen.ProductDetailScreen
+import com.example.productexplorer.data.sampleProduct
+import com.example.productexplorer.ui.screen.ProductDetailScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
