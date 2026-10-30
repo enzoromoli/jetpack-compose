@@ -1,8 +1,10 @@
 package com.example.productexplorer.ui.component
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -20,11 +22,12 @@ fun CategoriesSection(
             style = MaterialTheme.typography.titleMedium
         )
         Spacer(modifier = Modifier.height(8.dp))
-        Row {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
             CategoryChip(label = "Smartphones")
-            Spacer(modifier = Modifier.weight(1f))
             CategoryChip(label = "Audio")
-            Spacer(modifier = Modifier.weight(1f))
             CategoryChip(label = "Maison")
         }
     }

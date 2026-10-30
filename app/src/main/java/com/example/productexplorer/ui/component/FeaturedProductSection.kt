@@ -48,7 +48,10 @@ fun FeaturedProductSection(
                 stock = product.stock
             )
             Spacer(modifier = Modifier.height(12.dp))
-            Button(onClick = onClick) {
+            Button(
+                onClick = onClick,
+                modifier = Modifier.fillMaxWidth()
+            ) {
                 Text(text = "Voir le produit")
             }
         }
