@@ -14,6 +14,7 @@ import com.example.greetingcard.ui.theme.GreetingCardTheme
 import com.example.tp4.data.sampleProduct
 import com.example.tp4.model.ProductUi
 import com.example.tp4.ui.component.ProductHeader
+import com.example.tp4.ui.component.ProductImage
 import com.example.tp4.ui.component.ProductPriceCard
 
 @Composable
@@ -27,6 +28,12 @@ fun ProductDetailScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
+        ProductImage(
+            productTitle = product.title,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
+        )
         ProductHeader(
             title = product.title,
             brand = product.brand,
