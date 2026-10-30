@@ -10,6 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.greetingcard.ui.theme.GreetingCardTheme
 import com.example.tp4.data.sampleProduct
+import com.example.tp4.data.sampleProductOutOfStock
 import com.example.tp4.model.ProductUi
 import com.example.tp4.ui.component.AddToCartButton
 import com.example.tp4.ui.component.ProductAvailabilityCard
@@ -85,6 +86,17 @@ fun ProductDetailScreenPreview() {
     GreetingCardTheme {
         ProductDetailScreen(
             product = sampleProduct(),
+            onAddToCartClick = {}
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProductDetailScreenOutOfStockPreview() {
+    GreetingCardTheme {
+        ProductDetailScreen(
+            product = sampleProductOutOfStock(),
             onAddToCartClick = {}
         )
     }
