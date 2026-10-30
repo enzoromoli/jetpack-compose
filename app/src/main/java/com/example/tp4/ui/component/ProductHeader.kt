@@ -1,6 +1,7 @@
 package com.example.tp4.ui.component
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,8 +14,17 @@ fun ProductHeader(
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
-        Text(text = title)
-        Text(text = brand)
-        Text(text = category)
+        Text(
+            text = title,
+            style = MaterialTheme.typography.headlineSmall
+        )
+        Text(
+            text = brand,
+            style = MaterialTheme.typography.titleMedium
+        )
+        Text(
+            text = category,
+            style = MaterialTheme.typography.bodyMedium
+        )
     }
 }
