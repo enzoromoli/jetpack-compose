@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.greetingcard.ui.theme.GreetingCardTheme
 import com.example.productexplorer.data.sampleProduct
-import com.example.productexplorer.ui.screen.ProductDetailScreen
+import com.example.productexplorer.ui.screen.ProductHomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +19,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             GreetingCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ProductDetailScreen(
-                        product = sampleProduct(),
-                        onAddToCartClick = {},
+                    ProductHomeScreen(
+                        featuredProduct = sampleProduct(),
+                        onFeaturedProductClick = {},
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
