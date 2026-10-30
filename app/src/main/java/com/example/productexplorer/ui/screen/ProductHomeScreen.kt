@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.productexplorer.model.ProductUi
 import com.example.productexplorer.ui.component.HomeHeader
+import com.example.productexplorer.ui.component.SearchPreviewBar
 
 @Composable
 fun ProductHomeScreen(
@@ -23,6 +24,8 @@ fun ProductHomeScreen(
             .padding(16.dp)
     ) {
         HomeHeader()
+        Spacer(modifier = Modifier.height(24.dp))
+        SearchPreviewBar()
         Spacer(modifier = Modifier.height(24.dp))
     }
 }
