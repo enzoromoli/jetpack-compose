@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.example.greetingcard.ui.theme.GreetingCardTheme
 import com.example.tp4.data.sampleProduct
 import com.example.tp4.model.ProductUi
+import com.example.tp4.ui.component.ProductAvailabilityCard
 import com.example.tp4.ui.component.ProductHeader
 import com.example.tp4.ui.component.ProductImage
 import com.example.tp4.ui.component.ProductPriceCard
@@ -50,6 +51,13 @@ fun ProductDetailScreen(
         ProductRating(
             rating = product.rating,
             modifier = Modifier.padding(top = 16.dp)
+        )
+        ProductAvailabilityCard(
+            stock = product.stock,
+            shippingInformation = product.shippingInformation,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
         )
         Text(text = product.description)
 
