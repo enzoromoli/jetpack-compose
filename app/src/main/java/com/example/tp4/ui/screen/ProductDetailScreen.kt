@@ -16,6 +16,7 @@ import com.example.tp4.model.ProductUi
 import com.example.tp4.ui.component.ProductHeader
 import com.example.tp4.ui.component.ProductImage
 import com.example.tp4.ui.component.ProductPriceCard
+import com.example.tp4.ui.component.ProductRating
 
 @Composable
 fun ProductDetailScreen(
@@ -45,6 +46,10 @@ fun ProductDetailScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp)
+        )
+        ProductRating(
+            rating = product.rating,
+            modifier = Modifier.padding(top = 16.dp)
         )
         Text(text = product.description)
 
