@@ -2,6 +2,7 @@ package com.example.tp4.ui.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -13,6 +14,7 @@ import com.example.greetingcard.ui.theme.GreetingCardTheme
 import com.example.tp4.data.sampleProduct
 import com.example.tp4.model.ProductUi
 import com.example.tp4.ui.component.ProductHeader
+import com.example.tp4.ui.component.ProductPriceCard
 
 @Composable
 fun ProductDetailScreen(
@@ -30,7 +32,13 @@ fun ProductDetailScreen(
             brand = product.brand,
             category = product.category
         )
-        Text(text = "${product.price} €")
+        ProductPriceCard(
+            price = product.price,
+            discountPercentage = product.discountPercentage,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
+        )
         Text(text = product.description)
 
         Button(onClick = onAddToCartClick) {
