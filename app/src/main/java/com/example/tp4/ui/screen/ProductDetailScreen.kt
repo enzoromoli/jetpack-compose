@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.example.greetingcard.ui.theme.GreetingCardTheme
 import com.example.tp4.data.sampleProduct
 import com.example.tp4.model.ProductUi
+import com.example.tp4.ui.component.ProductHeader
 
 @Composable
 fun ProductDetailScreen(
@@ -24,9 +25,11 @@ fun ProductDetailScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Text(text = product.title)
-        Text(text = product.brand)
-        Text(text = product.category)
+        ProductHeader(
+            title = product.title,
+            brand = product.brand,
+            category = product.category
+        )
         Text(text = "${product.price} €")
         Text(text = product.description)
 
