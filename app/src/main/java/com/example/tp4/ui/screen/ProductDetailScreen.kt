@@ -4,8 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -13,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.example.greetingcard.ui.theme.GreetingCardTheme
 import com.example.tp4.data.sampleProduct
 import com.example.tp4.model.ProductUi
+import com.example.tp4.ui.component.AddToCartButton
 import com.example.tp4.ui.component.ProductAvailabilityCard
 import com.example.tp4.ui.component.ProductDescription
 import com.example.tp4.ui.component.ProductHeader
@@ -71,10 +70,12 @@ fun ProductDetailScreen(
                 .fillMaxWidth()
                 .padding(top = 16.dp)
         )
-
-        Button(onClick = onAddToCartClick) {
-            Text(text = "Ajouter au panier")
-        }
+        AddToCartButton(
+            onClick = onAddToCartClick,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
+        )
     }
 }
 
