@@ -1,7 +1,9 @@
 package com.example.productexplorer.ui.screen
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -21,5 +23,6 @@ fun ProductHomeScreen(
             .padding(16.dp)
     ) {
         HomeHeader()
+        Spacer(modifier = Modifier.height(24.dp))
     }
 }
