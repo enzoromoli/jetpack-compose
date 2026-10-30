@@ -14,6 +14,7 @@ import com.example.greetingcard.ui.theme.GreetingCardTheme
 import com.example.tp4.data.sampleProduct
 import com.example.tp4.model.ProductUi
 import com.example.tp4.ui.component.ProductAvailabilityCard
+import com.example.tp4.ui.component.ProductDescription
 import com.example.tp4.ui.component.ProductHeader
 import com.example.tp4.ui.component.ProductImage
 import com.example.tp4.ui.component.ProductPriceCard
@@ -59,7 +60,10 @@ fun ProductDetailScreen(
                 .fillMaxWidth()
                 .padding(top = 16.dp)
         )
-        Text(text = product.description)
+        ProductDescription(
+            description = product.description,
+            modifier = Modifier.padding(top = 16.dp)
+        )
 
         Button(onClick = onAddToCartClick) {
             Text(text = "Ajouter au panier")
