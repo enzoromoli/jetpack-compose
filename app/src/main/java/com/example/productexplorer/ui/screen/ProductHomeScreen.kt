@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.productexplorer.model.ProductUi
 import com.example.productexplorer.ui.component.CategoriesSection
+import com.example.productexplorer.ui.component.DailyOfferBox
 import com.example.productexplorer.ui.component.FeaturedProductSection
 import com.example.productexplorer.ui.component.HomeHeader
 import com.example.productexplorer.ui.component.SearchPreviewBar
@@ -36,5 +37,6 @@ fun ProductHomeScreen(
         Spacer(modifier = Modifier.height(24.dp))
         CategoriesSection()
         Spacer(modifier = Modifier.height(24.dp))
+        DailyOfferBox()
     }
 }
