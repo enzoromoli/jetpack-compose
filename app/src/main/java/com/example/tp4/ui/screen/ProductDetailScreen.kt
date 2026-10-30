@@ -19,6 +19,7 @@ import com.example.tp4.ui.component.ProductHeader
 import com.example.tp4.ui.component.ProductImage
 import com.example.tp4.ui.component.ProductPriceCard
 import com.example.tp4.ui.component.ProductRating
+import com.example.tp4.ui.component.ProductWarrantyField
 
 @Composable
 fun ProductDetailScreen(
@@ -63,6 +64,12 @@ fun ProductDetailScreen(
         ProductDescription(
             description = product.description,
             modifier = Modifier.padding(top = 16.dp)
+        )
+        ProductWarrantyField(
+            warrantyInformation = product.warrantyInformation,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
         )
 
         Button(onClick = onAddToCartClick) {
