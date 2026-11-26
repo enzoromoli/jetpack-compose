@@ -13,7 +13,11 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.greetingcard.ui.theme.GreetingCardTheme
+import com.example.productexplorer_tp09.data.sampleCategories
+import com.example.productexplorer_tp09.data.sampleProducts
 import com.example.productexplorer_tp09.model.ProductUi
 import com.example.productexplorer_tp09.ui.component.CategoryRow
 import com.example.productexplorer_tp09.ui.component.ProductListItem
@@ -92,5 +96,23 @@ fun ProductCatalogScreen(
                 }
             )
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProductCatalogScreenStatelessPreview() {
+    GreetingCardTheme(dynamicColor = false) {
+        ProductCatalogScreen(
+            products = sampleProducts(),
+            categories = sampleCategories(),
+            searchQuery = "",
+            onSearchQueryChange = {},
+            showOnlyInStock = false,
+            onToggleStockFilter = {},
+            favoriteProductIds = listOf(1),
+            onFavoriteClick = {},
+            onProductClick = {}
+        )
     }
 }
