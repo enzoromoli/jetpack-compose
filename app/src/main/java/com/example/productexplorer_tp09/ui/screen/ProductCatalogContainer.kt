@@ -7,6 +7,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.greetingcard.ui.theme.GreetingCardTheme
+import com.example.productexplorer_tp09.data.sampleCategories
+import com.example.productexplorer_tp09.data.sampleProducts
 import com.example.productexplorer_tp09.model.ProductUi
 
 @Composable
@@ -48,5 +52,54 @@ fun ProductCatalogContainer(
         } else {
             favoriteProductIds + productId
         }
+    }
+
+    ProductCatalogScreen(
+        products = filteredProducts,
+        categories = categories,
+        searchQuery = searchQuery,
+        onSearchQueryChange = { newValue ->
+            searchQuery = newValue
+        },
+        showOnlyInStock = showOnlyInStock,
+        onToggleStockFilter = {
+            showOnlyInStock = !showOnlyInStock
+        },
+        favoriteProductIds = favoriteProductIds,
+        onFavoriteClick = { productId ->
+            toggleFavorite(productId)
+        },
+        onProductClick = onProductClick,
+        modifier = modifier
+    )
+}
+
+@Preview(
+    showBackground = true,
+    name = "Catalogue - Light Theme"
+)
+@Composable
+fun ProductCatalogContainerLightPreview() {
+    GreetingCardTheme(darkTheme = false, dynamicColor = false) {
+        ProductCatalogContainer(
+            products = sampleProducts(),
+            categories = sampleCategories(),
+            onProductClick = {}
+        )
+    }
+}
+
+@Preview(
+    showBackground = true,
+    name = "Catalogue - Dark Theme"
+)
+@Composable
+fun ProductCatalogContainerDarkPreview() {
+    GreetingCardTheme(darkTheme = true, dynamicColor = false) {
+        ProductCatalogContainer(
+            products = sampleProducts(),
+            categories = sampleCategories(),
+            onProductClick = {}
+        )
     }
 }

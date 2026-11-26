@@ -9,8 +9,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.greetingcard.ui.theme.GreetingCardTheme
+import com.example.productexplorer_tp09.data.sampleCategories
 import com.example.productexplorer_tp09.data.sampleProducts
-import com.example.productexplorer_tp09.ui.screen.ProductCatalogScreen
+import com.example.productexplorer_tp09.ui.screen.ProductCatalogContainer
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +20,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             GreetingCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ProductCatalogScreen(
+                    ProductCatalogContainer(
                         products = sampleProducts(),
+                        categories = sampleCategories(),
                         onProductClick = {
                             // Plus tard : ouvrir le détail du produit
                         },
