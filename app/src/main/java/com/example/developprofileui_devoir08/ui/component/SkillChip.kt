@@ -1,4 +1,4 @@
-package com.example.developprofileui.ui.component
+package com.example.developprofileui_devoir08.ui.component
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme

@@ -1,4 +1,4 @@
-package com.example.developprofileui.ui.component
+package com.example.developprofileui_devoir08.ui.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

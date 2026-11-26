@@ -1,4 +1,4 @@
-package com.example.developprofileui.ui.screen
+package com.example.developprofileui_devoir08.ui.screen
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
@@ -13,13 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.developprofileui.data.sampleProfile
-import com.example.developprofileui.model.DeveloperProfileUi
-import com.example.developprofileui.ui.component.ContactSection
-import com.example.developprofileui.ui.component.ProfileHeader
-import com.example.developprofileui.ui.component.ProjectCard
-import com.example.developprofileui.ui.component.SkillsSection
-import com.example.developprofileui.ui.theme.DeveloperProfileTheme
+import com.example.developprofileui_devoir08.data.sampleProfile
+import com.example.developprofileui_devoir08.model.DeveloperProfileUi
+import com.example.developprofileui_devoir08.ui.component.ContactSection
+import com.example.developprofileui_devoir08.ui.component.ProfileHeader
+import com.example.developprofileui_devoir08.ui.component.ProjectCard
+import com.example.developprofileui_devoir08.ui.component.SkillsSection
+import com.example.developprofileui_devoir08.ui.theme.DeveloperProfileTheme
 
 @Composable
 fun DeveloperProfileScreen(

@@ -1,4 +1,4 @@
-package com.example.developprofileui.ui.component
+package com.example.developprofileui_devoir08.ui.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,7 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.developprofileui.model.ProjectUi
+import com.example.developprofileui_devoir08.model.ProjectUi
 
 @Composable
 fun ProjectCard(

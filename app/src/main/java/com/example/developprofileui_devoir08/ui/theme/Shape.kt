@@ -1,4 +1,4 @@
-package com.example.developprofileui.ui.theme
+package com.example.developprofileui_devoir08.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

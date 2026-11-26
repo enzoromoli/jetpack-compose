@@ -1,4 +1,4 @@
-package com.example.developprofileui.model
+package com.example.developprofileui_devoir08.model
 
 data class DeveloperProfileUi(
     val name: String,

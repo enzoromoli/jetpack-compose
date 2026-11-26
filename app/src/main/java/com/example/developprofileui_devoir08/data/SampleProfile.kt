@@ -1,7 +1,7 @@
-package com.example.developprofileui.data
+package com.example.developprofileui_devoir08.data
 
-import com.example.developprofileui.model.DeveloperProfileUi
-import com.example.developprofileui.model.ProjectUi
+import com.example.developprofileui_devoir08.model.DeveloperProfileUi
+import com.example.developprofileui_devoir08.model.ProjectUi
 
 fun sampleProfile(): DeveloperProfileUi {
     return DeveloperProfileUi(
