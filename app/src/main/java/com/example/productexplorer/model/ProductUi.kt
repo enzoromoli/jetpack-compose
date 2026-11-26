@@ -1,6 +1,7 @@
 package com.example.productexplorer.model
 
 data class ProductUi(
+    val id: Int,
     val title: String,
     val brand: String,
     val category: String,
