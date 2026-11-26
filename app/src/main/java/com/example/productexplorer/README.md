@@ -1,19 +1,20 @@
 # Product Explorer
 
-Application Compose issue des TP4 et TP5.
+Application Compose de catalogue de produits avec des données locales.
 
 ## Écrans
 
-- `ProductHomeScreen` — écran d'accueil (lancé au démarrage) : en-tête, barre de recherche visuelle, produit mis en avant, catégories, offre du jour.
-- `ProductDetailScreen` — écran de détail d'un produit, conservé mais non lancé par défaut.
+- `ProductCatalogContainer` / `ProductCatalogScreen` — catalogue interactif (lancé au démarrage) : recherche, filtre « en stock », favoris. Le container possède l'état, l'écran est stateless.
+- `ProductHomeScreen` — écran d'accueil : en-tête, barre de recherche visuelle, produit mis en avant, catégories, offre du jour.
+- `ProductDetailScreen` — écran de détail d'un produit.
 
 ## Structure
 
 ```
 productexplorer/
-├── MainActivity.kt            // Point d'entrée, charge ProductHomeScreen
+├── MainActivity.kt            // Point d'entrée, charge ProductCatalogContainer
 ├── model/ProductUi.kt         // Données affichées par l'UI
-├── data/SampleProducts.kt     // Produits d'exemple (local, sans réseau)
+├── data/SampleProducts.kt     // Produits et catégories d'exemple (local, sans réseau)
 └── ui/
     ├── screen/                // Écrans assemblant les composants
     └── component/             // Un fichier par composable réutilisable
