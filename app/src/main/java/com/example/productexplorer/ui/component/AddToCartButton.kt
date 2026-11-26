@@ -1,4 +1,4 @@
-package com.example.productexplorer_tp04_05.ui.component
+package com.example.productexplorer.ui.component
 
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
