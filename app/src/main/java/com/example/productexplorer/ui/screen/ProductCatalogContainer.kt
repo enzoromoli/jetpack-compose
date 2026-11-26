@@ -1,4 +1,4 @@
-package com.example.productexplorer_tp09.ui.screen
+package com.example.productexplorer.ui.screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -9,9 +9,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.greetingcard.ui.theme.GreetingCardTheme
-import com.example.productexplorer_tp09.data.sampleCategories
-import com.example.productexplorer_tp09.data.sampleProducts
-import com.example.productexplorer_tp09.model.ProductUi
+import com.example.productexplorer.data.sampleCategories
+import com.example.productexplorer.data.sampleProducts
+import com.example.productexplorer.model.ProductUi
 
 @Composable
 fun ProductCatalogContainer(

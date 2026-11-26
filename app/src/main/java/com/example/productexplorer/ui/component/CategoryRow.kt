@@ -1,4 +1,4 @@
-package com.example.productexplorer_tp09.ui.component
+package com.example.productexplorer.ui.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding

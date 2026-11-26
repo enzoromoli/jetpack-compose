@@ -1,4 +1,4 @@
-package com.example.productexplorer_tp08.ui.screen
+package com.example.productexplorer.ui.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -12,61 +12,29 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.greetingcard.ui.theme.GreetingCardTheme
-import com.example.productexplorer_tp08.data.sampleCategories
-import com.example.productexplorer_tp08.data.sampleProducts
-import com.example.productexplorer_tp08.model.ProductUi
-import com.example.productexplorer_tp08.ui.component.CategoryRow
-import com.example.productexplorer_tp08.ui.component.ProductListItem
+import com.example.productexplorer.data.sampleCategories
+import com.example.productexplorer.data.sampleProducts
+import com.example.productexplorer.model.ProductUi
+import com.example.productexplorer.ui.component.CategoryRow
+import com.example.productexplorer.ui.component.ProductListItem
 
 @Composable
 fun ProductCatalogScreen(
     products: List<ProductUi>,
+    categories: List<String>,
+    searchQuery: String,
+    onSearchQueryChange: (String) -> Unit,
+    showOnlyInStock: Boolean,
+    onToggleStockFilter: () -> Unit,
+    favoriteProductIds: List<Int>,
+    onFavoriteClick: (Int) -> Unit,
     onProductClick: (ProductUi) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var searchQuery by rememberSaveable {
-        mutableStateOf("")
-    }
-
-    var showOnlyInStock by rememberSaveable {
-        mutableStateOf(false)
-    }
-
-    var favoriteProductIds by rememberSaveable {
-        mutableStateOf(listOf<Int>())
-    }
-
-    fun toggleFavorite(productId: Int) {
-        favoriteProductIds = if (favoriteProductIds.contains(productId)) {
-            favoriteProductIds - productId
-        } else {
-            favoriteProductIds + productId
-        }
-    }
-
-    val filteredProducts = remember(products, searchQuery, showOnlyInStock) {
-        products.filter { product ->
-            val matchesSearch =
-                product.title.contains(searchQuery, ignoreCase = true) ||
-                        product.brand.contains(searchQuery, ignoreCase = true) ||
-                        product.category.contains(searchQuery, ignoreCase = true)
-
-            val matchesStock =
-                !showOnlyInStock || product.stock > 0
-
-            matchesSearch && matchesStock
-        }
-    }
-
     LazyColumn(
         modifier = modifier
             .fillMaxSize()
@@ -84,9 +52,7 @@ fun ProductCatalogScreen(
         item {
             OutlinedTextField(
                 value = searchQuery,
-                onValueChange = { newValue ->
-                    searchQuery = newValue
-                },
+                onValueChange = onSearchQueryChange,
                 label = {
                     Text(text = "Rechercher un produit")
                 },
@@ -95,9 +61,7 @@ fun ProductCatalogScreen(
         }
         item {
             Button(
-                onClick = {
-                    showOnlyInStock = !showOnlyInStock
-                }
+                onClick = onToggleStockFilter
             ) {
                 Text(
                     text = if (showOnlyInStock) {
@@ -109,23 +73,23 @@ fun ProductCatalogScreen(
             }
         }
         item {
-            CategoryRow(categories = sampleCategories())
+            CategoryRow(categories = categories)
         }
         item {
             Text(
-                text = "${filteredProducts.size} produit(s) affiché(s)",
+                text = "${products.size} produit(s) affiché(s)",
                 style = MaterialTheme.typography.bodyMedium
             )
         }
         items(
-            items = filteredProducts,
+            items = products,
             key = { product -> product.id }
         ) { product ->
             ProductListItem(
                 product = product,
                 isFavorite = favoriteProductIds.contains(product.id),
                 onFavoriteClick = {
-                    toggleFavorite(product.id)
+                    onFavoriteClick(product.id)
                 },
                 onClick = {
                     onProductClick(product)
@@ -135,23 +99,19 @@ fun ProductCatalogScreen(
     }
 }
 
-@Preview(showBackground = true, name = "Catalogue - Light Theme")
+@Preview(showBackground = true)
 @Composable
-fun ProductCatalogScreenLightPreview() {
-    GreetingCardTheme(darkTheme = false, dynamicColor = false) {
+fun ProductCatalogScreenStatelessPreview() {
+    GreetingCardTheme(dynamicColor = false) {
         ProductCatalogScreen(
             products = sampleProducts(),
-            onProductClick = {}
-        )
-    }
-}
-
-@Preview(showBackground = true, name = "Catalogue - Dark Theme")
-@Composable
-fun ProductCatalogScreenDarkPreview() {
-    GreetingCardTheme(darkTheme = true, dynamicColor = false) {
-        ProductCatalogScreen(
-            products = sampleProducts(),
+            categories = sampleCategories(),
+            searchQuery = "",
+            onSearchQueryChange = {},
+            showOnlyInStock = false,
+            onToggleStockFilter = {},
+            favoriteProductIds = listOf(1),
+            onFavoriteClick = {},
             onProductClick = {}
         )
     }
