@@ -1,6 +1,6 @@
-package com.example.productexplorer.data
+package com.example.productexplorer_tp04_05.data
 
-import com.example.productexplorer.model.ProductUi
+import com.example.productexplorer_tp04_05.model.ProductUi
 
 fun sampleProduct(): ProductUi {
     return ProductUi(

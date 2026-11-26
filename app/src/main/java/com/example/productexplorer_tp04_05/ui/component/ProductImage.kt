@@ -1,4 +1,4 @@
-package com.example.productexplorer.ui.component
+package com.example.productexplorer_tp04_05.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable

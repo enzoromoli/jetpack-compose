@@ -1,4 +1,4 @@
-package com.example.productexplorer.ui.screen
+package com.example.productexplorer_tp04_05.ui.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -12,13 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.greetingcard.ui.theme.GreetingCardTheme
-import com.example.productexplorer.data.sampleProduct
-import com.example.productexplorer.model.ProductUi
-import com.example.productexplorer.ui.component.CategoriesSection
-import com.example.productexplorer.ui.component.DailyOfferBox
-import com.example.productexplorer.ui.component.FeaturedProductSection
-import com.example.productexplorer.ui.component.HomeHeader
-import com.example.productexplorer.ui.component.SearchPreviewBar
+import com.example.productexplorer_tp04_05.data.sampleProduct
+import com.example.productexplorer_tp04_05.model.ProductUi
+import com.example.productexplorer_tp04_05.ui.component.CategoriesSection
+import com.example.productexplorer_tp04_05.ui.component.DailyOfferBox
+import com.example.productexplorer_tp04_05.ui.component.FeaturedProductSection
+import com.example.productexplorer_tp04_05.ui.component.HomeHeader
+import com.example.productexplorer_tp04_05.ui.component.SearchPreviewBar
 
 @Composable
 fun ProductHomeScreen(

@@ -1,4 +1,4 @@
-package com.example.productexplorer.ui.screen
+package com.example.productexplorer_tp04_05.ui.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,17 +11,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.greetingcard.ui.theme.GreetingCardTheme
-import com.example.productexplorer.data.sampleProduct
-import com.example.productexplorer.data.sampleProductOutOfStock
-import com.example.productexplorer.model.ProductUi
-import com.example.productexplorer.ui.component.AddToCartButton
-import com.example.productexplorer.ui.component.ProductAvailabilityCard
-import com.example.productexplorer.ui.component.ProductDescription
-import com.example.productexplorer.ui.component.ProductHeader
-import com.example.productexplorer.ui.component.ProductImage
-import com.example.productexplorer.ui.component.ProductPriceCard
-import com.example.productexplorer.ui.component.ProductRating
-import com.example.productexplorer.ui.component.ProductWarrantyField
+import com.example.productexplorer_tp04_05.data.sampleProduct
+import com.example.productexplorer_tp04_05.data.sampleProductOutOfStock
+import com.example.productexplorer_tp04_05.model.ProductUi
+import com.example.productexplorer_tp04_05.ui.component.AddToCartButton
+import com.example.productexplorer_tp04_05.ui.component.ProductAvailabilityCard
+import com.example.productexplorer_tp04_05.ui.component.ProductDescription
+import com.example.productexplorer_tp04_05.ui.component.ProductHeader
+import com.example.productexplorer_tp04_05.ui.component.ProductImage
+import com.example.productexplorer_tp04_05.ui.component.ProductPriceCard
+import com.example.productexplorer_tp04_05.ui.component.ProductRating
+import com.example.productexplorer_tp04_05.ui.component.ProductWarrantyField
 
 @Composable
 fun ProductDetailScreen(

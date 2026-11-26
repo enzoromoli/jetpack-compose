@@ -10,7 +10,7 @@ Application Compose issue des TP4 et TP5.
 ## Structure
 
 ```
-productexplorer/
+productexplorer_tp04_05/
 ├── MainActivity.kt            // Point d'entrée, charge ProductHomeScreen
 ├── model/ProductUi.kt         // Données affichées par l'UI
 ├── data/SampleProducts.kt     // Produits d'exemple (local, sans réseau)

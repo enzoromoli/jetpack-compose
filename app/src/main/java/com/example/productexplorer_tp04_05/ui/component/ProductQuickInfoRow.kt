@@ -1,4 +1,4 @@
-package com.example.productexplorer.ui.component
+package com.example.productexplorer_tp04_05.ui.component
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

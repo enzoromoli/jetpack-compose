@@ -1,4 +1,4 @@
-package com.example.productexplorer.ui.component
+package com.example.productexplorer_tp04_05.ui.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -12,7 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.productexplorer.model.ProductUi
+import com.example.productexplorer_tp04_05.model.ProductUi
 
 @Composable
 fun FeaturedProductSection(
