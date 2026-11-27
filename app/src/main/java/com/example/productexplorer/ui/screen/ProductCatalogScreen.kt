@@ -99,10 +99,13 @@ fun ProductCatalogScreen(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(
+    showBackground = true,
+    name = "Catalogue - Light Theme"
+)
 @Composable
-fun ProductCatalogScreenStatelessPreview() {
-    GreetingCardTheme(dynamicColor = false) {
+fun ProductCatalogScreenLightPreview() {
+    GreetingCardTheme(darkTheme = false, dynamicColor = false) {
         ProductCatalogScreen(
             products = sampleProducts(),
             categories = sampleCategories(),
@@ -111,6 +114,27 @@ fun ProductCatalogScreenStatelessPreview() {
             showOnlyInStock = false,
             onToggleStockFilter = {},
             favoriteProductIds = listOf(1),
+            onFavoriteClick = {},
+            onProductClick = {}
+        )
+    }
+}
+
+@Preview(
+    showBackground = true,
+    name = "Catalogue - Dark Theme"
+)
+@Composable
+fun ProductCatalogScreenDarkPreview() {
+    GreetingCardTheme(darkTheme = true, dynamicColor = false) {
+        ProductCatalogScreen(
+            products = sampleProducts(),
+            categories = sampleCategories(),
+            searchQuery = "audio",
+            onSearchQueryChange = {},
+            showOnlyInStock = true,
+            onToggleStockFilter = {},
+            favoriteProductIds = listOf(2),
             onFavoriteClick = {},
             onProductClick = {}
         )
