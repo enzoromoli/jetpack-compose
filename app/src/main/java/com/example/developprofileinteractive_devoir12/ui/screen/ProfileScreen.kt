@@ -113,6 +113,7 @@ fun ProfileScreen(
             ContactSection(
                 email = profile.email,
                 location = profile.location,
+                availability = profile.availability,
                 onContactClick = onContactClick
             )
         }

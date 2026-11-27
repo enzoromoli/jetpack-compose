@@ -17,7 +17,12 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
@@ -25,9 +30,14 @@ import androidx.compose.ui.unit.dp
 fun ContactSection(
     email: String,
     location: String,
+    availability: String,
     onContactClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    var showContactInfo by rememberSaveable {
+        mutableStateOf(false)
+    }
+
     Card(
         modifier = modifier.fillMaxWidth(),
         shape = MaterialTheme.shapes.medium
@@ -37,20 +47,36 @@ fun ContactSection(
                 text = "Contact",
                 style = MaterialTheme.typography.titleMedium
             )
-            Spacer(modifier = Modifier.height(8.dp))
-            ContactField(
-                label = "Email",
-                value = email,
-                icon = Icons.Filled.Email,
-                modifier = Modifier.fillMaxWidth()
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            ContactField(
-                label = "Localisation",
-                value = location,
-                icon = Icons.Filled.LocationOn,
-                modifier = Modifier.fillMaxWidth()
-            )
+            TextButton(onClick = { showContactInfo = !showContactInfo }) {
+                Text(
+                    text = if (showContactInfo) {
+                        "Masquer les informations de contact"
+                    } else {
+                        "Afficher les informations de contact"
+                    }
+                )
+            }
+            if (showContactInfo) {
+                ContactField(
+                    label = "Email",
+                    value = email,
+                    icon = Icons.Filled.Email,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                ContactField(
+                    label = "Localisation",
+                    value = location,
+                    icon = Icons.Filled.LocationOn,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = availability,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
                 onClick = onContactClick,
