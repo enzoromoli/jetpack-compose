@@ -8,8 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.developprofileinteractive_devoir12.data.sampleProfile
-import com.example.developprofileinteractive_devoir12.ui.screen.DeveloperProfileScreen
+import com.example.developprofileinteractive_devoir12.ui.screen.ProfileContainer
 import com.example.developprofileinteractive_devoir12.ui.theme.DeveloperProfileTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,8 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DeveloperProfileTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    DeveloperProfileScreen(
-                        profile = sampleProfile(),
+                    ProfileContainer(
                         onContactClick = {},
                         modifier = Modifier.padding(innerPadding)
                     )
