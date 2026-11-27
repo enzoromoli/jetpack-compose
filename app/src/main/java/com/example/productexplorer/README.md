@@ -4,7 +4,7 @@ Application Compose de catalogue de produits avec des données locales.
 
 ## Écrans
 
-- `ProductCatalogContainer` / `ProductCatalogScreen` — catalogue interactif (lancé au démarrage) : recherche, filtre « en stock », favoris. Le container possède l'état, l'écran est stateless.
+- `ProductCatalogContainer` / `ProductCatalogScreen` — catalogue interactif (lancé au démarrage) : recherche, filtre « en stock », favoris. `ProductCatalogViewModel` possède l'état, le container le relie à l'écran stateless.
 - `ProductHomeScreen` — écran d'accueil : en-tête, barre de recherche visuelle, produit mis en avant, catégories, offre du jour.
 - `ProductDetailScreen` — écran de détail d'un produit.
 
