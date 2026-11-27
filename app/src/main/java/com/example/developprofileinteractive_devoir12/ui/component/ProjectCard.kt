@@ -48,7 +48,7 @@ fun ProjectCard(
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = project.stack,
+                text = project.technologies.joinToString(" · "),
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.secondary
             )

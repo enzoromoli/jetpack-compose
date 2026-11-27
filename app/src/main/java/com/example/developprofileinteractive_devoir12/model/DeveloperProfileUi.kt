@@ -5,6 +5,7 @@ data class DeveloperProfileUi(
     val role: String,
     val description: String,
     val isAvailable: Boolean,
+    val availability: String,
     val skills: List<String>,
     val projects: List<ProjectUi>,
     val email: String,
